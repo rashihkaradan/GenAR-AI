@@ -1,7 +1,7 @@
 {
   "evidence_version": "1.0.0",
   "evidence_policy": "LLM consumers may receive only evidence_items selected from this document. Raw CSV/workbook and normalized line listings are outside this interface.",
-  "analysis_sha256": "2e1d19f3f67f2e1101245849dea284c676e4edb1b1b3a51f7677b61b4c081e19",
+  "analysis_sha256": "9599188829f106b6076e84b513cafc6ef750f6cf904da865b9749e5a755d9ec4",
   "evidence_items": [
     {
       "evidence_id": "EV-PERIOD-001",
@@ -5820,6 +5820,31 @@
       "case_level_or_reaction_level": "reaction",
       "limitations": [
         "Observed numerical patterns only; not a safety-signal determination."
+      ]
+    },
+    {
+      "evidence_id": "EV-INDEX-001",
+      "metric": "case_index_listing",
+      "value": {
+        "source_rows": 1068,
+        "unique_cases": 1024
+      },
+      "unit": "listing_rows_and_cases",
+      "analysis_name": "structured_case_index_metadata",
+      "source_fields": [
+        "safetyreportid",
+        "patient_reaction_reactionmeddrapt",
+        "raw_serious",
+        "raw_receivedate",
+        "raw_occurcountry",
+        "raw_patient_reaction_reactionoutcome",
+        "raw_fulfillexpeditecriteria"
+      ],
+      "calculation": "len(normalized source rows) and nunique(safetyreportid); source rows are retained for the structured case listing",
+      "filters": [],
+      "case_level_or_reaction_level": "mixed",
+      "limitations": [
+        "The case index retains source rows because a single case can contain multiple reaction rows; it is not a deduplicated case table."
       ]
     },
     {

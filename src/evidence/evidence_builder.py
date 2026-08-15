@@ -101,6 +101,7 @@ def build_evidence(analysis: dict[str, Any]) -> dict[str, Any]:
         _metric_item("EV-TREND-002", "serious_cases_by_month", "monthly_serious_case_counts", trends["serious_cases_by_month"], filters=["normalized_serious == 'serious'"], limitations=trend_limit),
         _metric_item("EV-TREND-003", "top_reactions_by_month", "monthly_top_reactions", trends["top_reactions_by_month"], limitations=trend_limit),
     ])
+    items.append(_metric_item("EV-INDEX-001", "case_index_listing", "structured_case_index_metadata", analysis["case_index_metadata"], limitations=["The case index retains source rows because a single case can contain multiple reaction rows; it is not a deduplicated case table."]))
     items.append(EvidenceItem(
         evidence_id="EV-LIMIT-001",
         metric="limitations",

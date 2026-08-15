@@ -28,6 +28,7 @@ class OpenAIResponsesClient(ModelClient):
             raise RuntimeError("Install the OpenAI Python SDK to use OpenAIResponsesClient.") from exc
         self._client = OpenAI(api_key=api_key)
         self._model = model or os.environ.get("OPENAI_MODEL", "gpt-5")
+        self.model_name = self._model
 
     def generate(self, *, system_prompt: str, user_prompt: str, response_schema: dict[str, Any]) -> dict[str, Any]:
         response = self._client.responses.create(
@@ -44,6 +45,7 @@ class StaticModelClient(ModelClient):
 
     def __init__(self, response: dict[str, Any]) -> None:
         self.response = response
+        self.model_name = "static-test-client"
 
     def generate(self, *, system_prompt: str, user_prompt: str, response_schema: dict[str, Any]) -> dict[str, Any]:
         return self.response

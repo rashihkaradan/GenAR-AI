@@ -31,6 +31,7 @@ def analyze(frame: pd.DataFrame) -> dict[str, Any]:
         "end_date": metric(dates.max().strftime("%Y-%m-%d") if not dates.empty else None, unit="date", calculation="max(parsed_receivedate)", source_fields=["receivedate", "parsed_receivedate"], level="case"),
     }
     reactions = analyze_reactions(frame)
+    cases = case_frame(frame)
     return {
         "reporting_period": reporting_period,
         "case_summary": analyze_cases(frame),
@@ -40,6 +41,13 @@ def analyze(frame: pd.DataFrame) -> dict[str, Any]:
         "outcomes": analyze_outcomes(frame),
         "alerts": analyze_alerts(frame),
         "trends": analyze_trends(frame),
+        "case_index_metadata": metric(
+            {"source_rows": int(len(frame)), "unique_cases": int(len(cases))},
+            unit="listing_rows_and_cases",
+            calculation="len(normalized source rows) and nunique(safetyreportid); source rows are retained for the structured case listing",
+            source_fields=["safetyreportid", "patient_reaction_reactionmeddrapt", "raw_serious", "raw_receivedate", "raw_occurcountry", "raw_patient_reaction_reactionoutcome", "raw_fulfillexpeditecriteria"],
+            level="mixed",
+        ),
         "limitations": [
             "Case-level metrics use one reproducible representative row per safetyreportid; validation warns when case-level values conflict across rows.",
             "Reaction and outcome cells can be comma-delimited. They are split only to count supplied instances; no reaction rows or instances are deduplicated.",
