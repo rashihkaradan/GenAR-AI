@@ -14,6 +14,7 @@ from src.ai.context_builder import ContextBuilder
 from src.ai.generator import SectionGenerator
 from src.ai.model_client import ModelClient, OpenAIResponsesClient
 from src.evidence.evidence_store import load_evidence, llm_safe_context
+from src.review.review_store import create_review_record
 
 
 PROMPT_VERSION = "1.0.0"
@@ -161,11 +162,26 @@ def generate_report(
     return {"report_type": "PADER-style report", "generation_timestamp": timestamp, "model_name": model_name, "prompt_version": PROMPT_VERSION, "evidence_source": Path(evidence_path).name, "sections": sections}
 
 
-def run(output_path: str | Path = "output/pader_report.json", **kwargs: Any) -> dict[str, Any]:
+def run(
+    output_path: str | Path = "output/pader_report.json",
+    report_validation_path: str | Path = "output/validation_report.json",
+    dataset_validation_path: str | Path = "data/validation_report.json",
+    review_record_path: str | Path = "output/review_record.json",
+    **kwargs: Any,
+) -> dict[str, Any]:
     report = generate_report(**kwargs)
     output = Path(output_path)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    # Initialise (or re-initialise) the review record alongside the new report.
+    # Validation reports may not exist on the very first run; create_review_record
+    # handles missing paths gracefully.
+    create_review_record(
+        report_path=output,
+        report_validation_path=report_validation_path,
+        dataset_validation_path=dataset_validation_path,
+        output_path=review_record_path,
+    )
     return report
 
 

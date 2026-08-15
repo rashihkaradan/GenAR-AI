@@ -1,0 +1,46 @@
+{
+  "review_version": "1.0.0",
+  "report_id": "4a813400-2285-4773-a868-7a93fb047688",
+  "report_path": "output\\pader_report.json",
+  "report_generation_timestamp": "2026-08-15T13:02:02.672621+00:00",
+  "model_name": "deterministic-evidence-template-fallback",
+  "prompt_version": "1.0.0",
+  "validation_status": "UNKNOWN",
+  "finalization_blocked": true,
+  "report_validation_errors": [],
+  "report_validation_warnings": [],
+  "report_numeric_claims_checked": 0,
+  "report_numeric_claims_failed": 0,
+  "dataset_validation_status": "PASS",
+  "dataset_validation_warnings": [
+    {
+      "code": "unexpected_age_unit",
+      "count": 3
+    },
+    {
+      "code": "inconsistent_case_level_values",
+      "column": "occurcountry",
+      "case_count": 17
+    }
+  ],
+  "dataset_validation_errors": [],
+  "dataset_row_count": 1068,
+  "dataset_unique_cases": 1024,
+  "review_status": "pending",
+  "reviewer": null,
+  "timestamp": null,
+  "comments": "",
+  "approved_sections": [],
+  "flagged_sections": [],
+  "section_names": [
+    "Reporting Period",
+    "Narrative Summary and Analysis",
+    "Summary Analysis of Cases",
+    "Reaction / Adverse Event Analysis",
+    "Serious Cases / 15-Day Alerts",
+    "Trends and Important Observations",
+    "History of Actions",
+    "Case Index / Listing",
+    "Data Limitations"
+  ]
+}
