@@ -1,0 +1,47 @@
+{
+  "input_rows": 1068,
+  "valid_rows": 1068,
+  "invalid_rows": 0,
+  "unique_cases": 1024,
+  "missing_fields": {
+    "safetyreportid": 0,
+    "receivedate": 0,
+    "patient_patientonsetage": 91,
+    "patient_patientonsetageunit": 81,
+    "patient_patientsex": 30,
+    "occurcountry": 7,
+    "serious": 0,
+    "patient_reaction_reactionmeddrapt": 0,
+    "patient_reaction_reactionoutcome": 0,
+    "fulfillexpeditecriteria": 0
+  },
+  "warnings": [
+    {
+      "code": "unexpected_age_unit",
+      "count": 3
+    },
+    {
+      "code": "inconsistent_case_level_values",
+      "column": "occurcountry",
+      "case_count": 17
+    }
+  ],
+  "errors": [],
+  "reporting_period": {
+    "start": "2024-12-27",
+    "end": "2025-12-26"
+  },
+  "methodology": {
+    "case_key": "safetyreportid",
+    "reaction_handling": "No reaction rows are deduplicated, split, or discarded. Case counts use unique non-missing safetyreportid values.",
+    "missing_data_policy": "Missing clinical values remain missing; no values are imputed.",
+    "scope_exclusions": [
+      "No System Organ Class is inferred.",
+      "No expectedness is inferred without label/CCDS data."
+    ]
+  },
+  "source_file": "Bisoprolol_icsr_sample_1068rows.xlsx",
+  "source_sha256": "872f3ce038d2d0bcce8f8d9654062d0f54d1fce2d0332630a5edbb7f16c5529d",
+  "normalized_output": "normalized_cases.jsonl",
+  "normalization_version": "1.0.0"
+}

@@ -1,0 +1,2172 @@
+{
+  "source": {
+    "path": "C:\\Users\\thans\\Downloads\\Bisoprolol_icsr_sample_1068rows.xlsx",
+    "format": "xlsx",
+    "sheet": "Bisoprolol_icsr_sample_1068rows",
+    "source_modified": false
+  },
+  "dataset_grain": {
+    "observed": "Line listing with one or more reaction/drug values per row; safetyreportid repeats across rows.",
+    "case_key": "safetyreportid",
+    "reaction_field": "patient_reaction_reactionmeddrapt"
+  },
+  "fields_required_for_analysis": {
+    "case_identification": [
+      "safetyreportid",
+      "companynumb"
+    ],
+    "patient_age": [
+      "patient_patientonsetage",
+      "patient_patientonsetageunit",
+      "patient_patientagegroup"
+    ],
+    "patient_sex": [
+      "patient_patientsex"
+    ],
+    "country": [
+      "occurcountry",
+      "primarysource_reportercountry",
+      "primarysourcecountry"
+    ],
+    "reaction_preferred_term": [
+      "patient_reaction_reactionmeddrapt",
+      "patient_reaction_reactionmeddraversionpt"
+    ],
+    "reaction_outcome": [
+      "patient_reaction_reactionoutcome"
+    ],
+    "overall_seriousness": [
+      "serious"
+    ],
+    "individual_seriousness_criteria": [
+      "seriousnessdeath",
+      "seriousnesslifethreatening",
+      "seriousnesshospitalization",
+      "seriousnessdisabling",
+      "seriousnesscongenitalanomali",
+      "seriousnessother"
+    ],
+    "reporting_received_date": [
+      "receivedate",
+      "receiptdate",
+      "report_date"
+    ],
+    "product": [
+      "patient_drug_medicinalproduct",
+      "drugs",
+      "patient_drug_drugcharacterization"
+    ],
+    "indication": [
+      "patient_drug_drugindication"
+    ],
+    "reporter_qualification": [
+      "primarysource_qualification"
+    ],
+    "expedited_15_day_alert_status": [
+      "fulfillexpeditecriteria"
+    ]
+  },
+  "columns": [
+    {
+      "name": "safetyreportversion",
+      "pandas_dtype": "int64",
+      "meaning": "Version number of the safety report.",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 8,
+      "example_value": 1,
+      "used_in_analysis": false,
+      "data_level": "case-level"
+    },
+    {
+      "name": "safetyreportid",
+      "pandas_dtype": "int64",
+      "meaning": "Safety report identifier; used as the case identifier.",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 1024,
+      "example_value": 24780403,
+      "used_in_analysis": true,
+      "data_level": "case-level"
+    },
+    {
+      "name": "primarysourcecountry",
+      "pandas_dtype": "str",
+      "meaning": "Country supplied for the primary source.",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 21,
+      "example_value": "italy",
+      "used_in_analysis": false,
+      "data_level": "case-level"
+    },
+    {
+      "name": "occurcountry",
+      "pandas_dtype": "str",
+      "meaning": "Country where the event/case occurred.",
+      "missing_count": 7,
+      "missing_percentage": 0.66,
+      "unique_non_missing_count": 21,
+      "example_value": "italy",
+      "used_in_analysis": true,
+      "data_level": "case-level"
+    },
+    {
+      "name": "transmissiondateformat",
+      "pandas_dtype": "int64",
+      "meaning": "Format code associated with transmissiondate.",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 1,
+      "example_value": 102,
+      "used_in_analysis": false,
+      "data_level": "case-level"
+    },
+    {
+      "name": "transmissiondate",
+      "pandas_dtype": "int64",
+      "meaning": "Transmission date as supplied in the source extract.",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 11,
+      "example_value": 20250115,
+      "used_in_analysis": false,
+      "data_level": "case-level"
+    },
+    {
+      "name": "reporttype",
+      "pandas_dtype": "str",
+      "meaning": "Reported case/report type.",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 2,
+      "example_value": "spontaneous report",
+      "used_in_analysis": true,
+      "data_level": "case-level"
+    },
+    {
+      "name": "serious",
+      "pandas_dtype": "str",
+      "meaning": "Overall serious/non-serious classification.",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 2,
+      "example_value": "serious",
+      "used_in_analysis": true,
+      "data_level": "case-level"
+    },
+    {
+      "name": "seriousnessdeath",
+      "pandas_dtype": "str",
+      "meaning": "Seriousness criterion: death.",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 2,
+      "example_value": "no",
+      "used_in_analysis": true,
+      "data_level": "case-level"
+    },
+    {
+      "name": "seriousnesslifethreatening",
+      "pandas_dtype": "str",
+      "meaning": "Seriousness criterion: life-threatening event.",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 2,
+      "example_value": "no",
+      "used_in_analysis": true,
+      "data_level": "case-level"
+    },
+    {
+      "name": "seriousnesshospitalization",
+      "pandas_dtype": "str",
+      "meaning": "Seriousness criterion: hospitalization or prolongation of hospitalization.",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 2,
+      "example_value": "yes",
+      "used_in_analysis": true,
+      "data_level": "case-level"
+    },
+    {
+      "name": "seriousnessdisabling",
+      "pandas_dtype": "str",
+      "meaning": "Seriousness criterion: persistent/significant disability or incapacity.",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 2,
+      "example_value": "no",
+      "used_in_analysis": true,
+      "data_level": "case-level"
+    },
+    {
+      "name": "seriousnesscongenitalanomali",
+      "pandas_dtype": "str",
+      "meaning": "Seriousness criterion: congenital anomaly/birth defect (source field spelling retained).",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 2,
+      "example_value": "no",
+      "used_in_analysis": true,
+      "data_level": "case-level"
+    },
+    {
+      "name": "seriousnessother",
+      "pandas_dtype": "str",
+      "meaning": "Seriousness criterion: other medically important condition.",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 2,
+      "example_value": "yes",
+      "used_in_analysis": true,
+      "data_level": "case-level"
+    },
+    {
+      "name": "receivedateformat",
+      "pandas_dtype": "int64",
+      "meaning": "Format code associated with receivedate.",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 1,
+      "example_value": 102,
+      "used_in_analysis": false,
+      "data_level": "case-level"
+    },
+    {
+      "name": "receivedate",
+      "pandas_dtype": "int64",
+      "meaning": "Date the case was received; used to determine the reporting period.",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 288,
+      "example_value": 20241227,
+      "used_in_analysis": true,
+      "data_level": "case-level"
+    },
+    {
+      "name": "receiptdateformat",
+      "pandas_dtype": "int64",
+      "meaning": "Format code associated with receiptdate.",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 1,
+      "example_value": 102,
+      "used_in_analysis": false,
+      "data_level": "case-level"
+    },
+    {
+      "name": "receiptdate",
+      "pandas_dtype": "int64",
+      "meaning": "Receipt date as supplied in the source extract.",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 295,
+      "example_value": 20241227,
+      "used_in_analysis": false,
+      "data_level": "case-level"
+    },
+    {
+      "name": "fulfillexpeditecriteria",
+      "pandas_dtype": "str",
+      "meaning": "Flag indicating whether the case fulfills expedited-reporting criteria; used as 15-day Alert proxy.",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 2,
+      "example_value": "yes",
+      "used_in_analysis": true,
+      "data_level": "case-level"
+    },
+    {
+      "name": "companynumb",
+      "pandas_dtype": "str",
+      "meaning": "Company case number as supplied in the source extract.",
+      "missing_count": 1,
+      "missing_percentage": 0.09,
+      "unique_non_missing_count": 1036,
+      "example_value": "IT-MINISAL02-1015898",
+      "used_in_analysis": false,
+      "data_level": "case-level"
+    },
+    {
+      "name": "primarysource_reportercountry",
+      "pandas_dtype": "str",
+      "meaning": "Country of the primary reporter.",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 21,
+      "example_value": "italy",
+      "used_in_analysis": true,
+      "data_level": "case-level"
+    },
+    {
+      "name": "primarysource_qualification",
+      "pandas_dtype": "str",
+      "meaning": "Primary reporter qualification.",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 4,
+      "example_value": "pharmacist",
+      "used_in_analysis": true,
+      "data_level": "case-level"
+    },
+    {
+      "name": "sender_sendertype",
+      "pandas_dtype": "str",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 2,
+      "example_value": "pharmaceutical company",
+      "used_in_analysis": false,
+      "data_level": "case-level"
+    },
+    {
+      "name": "sender_senderorganization",
+      "pandas_dtype": "str",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 1,
+      "example_value": "AUROBINDO",
+      "used_in_analysis": false,
+      "data_level": "case-level"
+    },
+    {
+      "name": "receiver_receivertype",
+      "pandas_dtype": "str",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 1,
+      "example_value": "other",
+      "used_in_analysis": false,
+      "data_level": "case-level"
+    },
+    {
+      "name": "receiver_receiverorganization",
+      "pandas_dtype": "str",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 1,
+      "example_value": "FDA",
+      "used_in_analysis": false,
+      "data_level": "case-level"
+    },
+    {
+      "name": "patient_patientonsetage",
+      "pandas_dtype": "float64",
+      "meaning": "Patient age at onset, with unit in patient_patientonsetageunit.",
+      "missing_count": 91,
+      "missing_percentage": 8.52,
+      "unique_non_missing_count": 87,
+      "example_value": 85.0,
+      "used_in_analysis": true,
+      "data_level": "case-level"
+    },
+    {
+      "name": "patient_patientonsetageunit",
+      "pandas_dtype": "object",
+      "meaning": "Unit for patient age at onset.",
+      "missing_count": 81,
+      "missing_percentage": 7.58,
+      "unique_non_missing_count": 5,
+      "example_value": "year",
+      "used_in_analysis": true,
+      "data_level": "case-level"
+    },
+    {
+      "name": "patient_patientsex",
+      "pandas_dtype": "str",
+      "meaning": "Patient sex.",
+      "missing_count": 30,
+      "missing_percentage": 2.81,
+      "unique_non_missing_count": 2,
+      "example_value": "female",
+      "used_in_analysis": true,
+      "data_level": "case-level"
+    },
+    {
+      "name": "patient_reaction_reactionmeddraversionpt",
+      "pandas_dtype": "object",
+      "meaning": "MedDRA version(s) associated with the reported Preferred Term(s).",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 58,
+      "example_value": "27.1,27.1",
+      "used_in_analysis": false,
+      "data_level": "reaction-level"
+    },
+    {
+      "name": "patient_reaction_reactionmeddrapt",
+      "pandas_dtype": "str",
+      "meaning": "Reported reaction coded as MedDRA Preferred Term(s); used for reaction analysis.",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 882,
+      "example_value": "Rectal haemorrhage,Deficiency anaemia",
+      "used_in_analysis": true,
+      "data_level": "reaction-level"
+    },
+    {
+      "name": "patient_reaction_reactionoutcome",
+      "pandas_dtype": "str",
+      "meaning": "Outcome(s) for reported reaction(s).",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 251,
+      "example_value": "unknown,unknown",
+      "used_in_analysis": true,
+      "data_level": "reaction-level"
+    },
+    {
+      "name": "patient_drug_drugcharacterization",
+      "pandas_dtype": "str",
+      "meaning": "Drug role/characterization value(s) as supplied (for example, suspect or concomitant).",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 245,
+      "example_value": "suspect,concomitant,concomitant,concomitant,concomitant,concomitant,concomitant,concomitant,concomitant,concomitant,concomitant,concomitant,concomitant",
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_drug_medicinalproduct",
+      "pandas_dtype": "str",
+      "meaning": "Medicinal product name(s) as supplied.",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 996,
+      "example_value": "CLOPIDOGREL BISULFATE,PANTOPRAZOLE SODIUM,PREDNISONE,SODIUM BICARBONATE,BISOPROLOL FUMARATE,DIAMOX SEQUELS,LASIX,NITROGLYCERIN,POTASSIUM CHLORIDE,ALLOPURINOL,Luvion,PHENOBARBITAL,ROSUVASTATIN",
+      "used_in_analysis": true,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_drug_drugauthorizationnumb",
+      "pandas_dtype": "object",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 4,
+      "missing_percentage": 0.37,
+      "unique_non_missing_count": 429,
+      "example_value": 90540,
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_drug_drugstructuredosagenumb",
+      "pandas_dtype": "object",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 153,
+      "missing_percentage": 14.33,
+      "unique_non_missing_count": 716,
+      "example_value": "75,20,5,500,2.5,250,500,15,300,50",
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_drug_drugstructuredosageunit",
+      "pandas_dtype": "str",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 153,
+      "missing_percentage": 14.33,
+      "unique_non_missing_count": 315,
+      "example_value": "mg,mg,mg,mg,mg,mg,mg,mg,mg,mg",
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_drug_drugseparatedosagenumb",
+      "pandas_dtype": "object",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 290,
+      "missing_percentage": 27.15,
+      "unique_non_missing_count": 186,
+      "example_value": "1,1,1,1,2,2,1,1,1",
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_drug_drugintervaldosageunitnumb",
+      "pandas_dtype": "object",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 330,
+      "missing_percentage": 30.9,
+      "unique_non_missing_count": 39,
+      "example_value": "1,1,1,1,1,1,1,1,1",
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_drug_drugintervaldosagedefinition",
+      "pandas_dtype": "str",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 330,
+      "missing_percentage": 30.9,
+      "unique_non_missing_count": 76,
+      "example_value": "month,month,month,month,month,month,month,month,month",
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_drug_drugdosagetext",
+      "pandas_dtype": "str",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 244,
+      "missing_percentage": 22.85,
+      "unique_non_missing_count": 743,
+      "example_value": "75 MILLIGRAM, ONCE A DAY (IN THE MORNING),20 MILLIGRAM, ONCE A DAY (IN THE MORNING),5 MILLIGRAM, ONCE A DAY (IN THE MORNING),500 MILLIGRAM, ONCE A DAY (IN THE MORNING),2.5 MILLIGRAM, TWO TIMES A DAY,250 MILLIGRAM,500 MILLIGRAM, TWO TIMES A DAY (1/4 CP),15 MILLIGRAM, ONCE A DAY,UNK,300 MILLIGRAM, ONCE A DAY (1/2 CP),50 MILLIGRAM, ONCE A DAY,UNK,UNK",
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_drug_drugdosageform",
+      "pandas_dtype": "str",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 378,
+      "missing_percentage": 35.39,
+      "unique_non_missing_count": 409,
+      "example_value": "Film-coated tablet,Tablet,Tablet,Tablet,Tablet,Tablet,Tablet,Transdermal system,Tablet,Tablet,Tablet,Tablet,Tablet",
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_drug_drugadministrationroute",
+      "pandas_dtype": "str",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 23,
+      "missing_percentage": 2.15,
+      "unique_non_missing_count": 409,
+      "example_value": "oral,oral,oral,oral,oral,oral,oral,transmammary,oral,oral,oral,oral,oral",
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_drug_drugindication",
+      "pandas_dtype": "str",
+      "meaning": "Indication(s) for the listed drug product(s).",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 793,
+      "example_value": "Arterial thrombosis,Gastrooesophageal reflux disease,Gouty arthritis,Hyperchlorhydria,Hypertension,Epilepsy,Renal failure,Angina pectoris,Hypokalaemia,Gout,Hypertension,Generalised tonic-clonic seizure,Hypercholesterolaemia",
+      "used_in_analysis": true,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_drug_actiondrug",
+      "pandas_dtype": "str",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 510,
+      "example_value": "unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown",
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_drug_drugadditional",
+      "pandas_dtype": "str",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 21,
+      "missing_percentage": 1.97,
+      "unique_non_missing_count": 333,
+      "example_value": "placebo,placebo,placebo,placebo,placebo,placebo,placebo,placebo,placebo,placebo,placebo,placebo,placebo",
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_drug_activesubstance_activesubstancename",
+      "pandas_dtype": "str",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 993,
+      "example_value": "CLOPIDOGREL BISULFATE,PANTOPRAZOLE SODIUM,PREDNISONE,SODIUM BICARBONATE,BISOPROLOL FUMARATE,ACETAZOLAMIDE,FUROSEMIDE,NITROGLYCERIN,POTASSIUM CHLORIDE,ALLOPURINOL,PHENOBARBITAL,ROSUVASTATIN",
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_summary_narrativeincludeclinical",
+      "pandas_dtype": "str",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 355,
+      "missing_percentage": 33.24,
+      "unique_non_missing_count": 421,
+      "example_value": "CASE EVENT DATE: 20241130",
+      "used_in_analysis": false,
+      "data_level": "case-level"
+    },
+    {
+      "name": "drugs",
+      "pandas_dtype": "str",
+      "meaning": "Drug names/active substances as supplied in the extract.",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 968,
+      "example_value": "ALLOPURINOL,BISOPROLOL FUMARATE,CLOPIDOGREL BISULFATE,DIAMOX SEQUELS,LASIX,Luvion,NITROGLYCERIN,PANTOPRAZOLE SODIUM,PHENOBARBITAL,POTASSIUM CHLORIDE,PREDNISONE,ROSUVASTATIN,SODIUM BICARBONATE",
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "report_date",
+      "pandas_dtype": "datetime64[us]",
+      "meaning": "Report date field included in the source extract.",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_non_missing_count": 288,
+      "example_value": "2024-12-27",
+      "used_in_analysis": false,
+      "data_level": "case-level"
+    },
+    {
+      "name": "patient_patientweight",
+      "pandas_dtype": "float64",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 579,
+      "missing_percentage": 54.21,
+      "unique_non_missing_count": 139,
+      "example_value": 62.0,
+      "used_in_analysis": false,
+      "data_level": "case-level"
+    },
+    {
+      "name": "patient_drug_drugstartdateformat",
+      "pandas_dtype": "object",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 417,
+      "missing_percentage": 39.04,
+      "unique_non_missing_count": 122,
+      "example_value": 102102102102,
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_drug_drugstartdate",
+      "pandas_dtype": "object",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 417,
+      "missing_percentage": 39.04,
+      "unique_non_missing_count": 609,
+      "example_value": "20240711,20240711,20240711,20240711",
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_drug_drugenddateformat",
+      "pandas_dtype": "object",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 532,
+      "missing_percentage": 49.81,
+      "unique_non_missing_count": 51,
+      "example_value": 102102102102,
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_drug_drugenddate",
+      "pandas_dtype": "object",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 532,
+      "missing_percentage": 49.81,
+      "unique_non_missing_count": 489,
+      "example_value": "20240711,20240711,20240711,20240711",
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_drug_drugtreatmentduration",
+      "pandas_dtype": "object",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 622,
+      "missing_percentage": 58.24,
+      "unique_non_missing_count": 311,
+      "example_value": "1,1,1,1",
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_drug_drugtreatmentdurationunit",
+      "pandas_dtype": "str",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 622,
+      "missing_percentage": 58.24,
+      "unique_non_missing_count": 43,
+      "example_value": "day,day,day,day",
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_drug_drugcumulativedosagenumb",
+      "pandas_dtype": "object",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 880,
+      "missing_percentage": 82.4,
+      "unique_non_missing_count": 177,
+      "example_value": "63,3000,3000,3000,17.591,5,5",
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_drug_drugcumulativedosageunit",
+      "pandas_dtype": "object",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 880,
+      "missing_percentage": 82.4,
+      "unique_non_missing_count": 51,
+      "example_value": "002,003,003,003,002,032,032",
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "primarysource_literaturereference",
+      "pandas_dtype": "str",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 911,
+      "missing_percentage": 85.3,
+      "unique_non_missing_count": 137,
+      "example_value": "Villarejo-Elena C, Pacheco-Yepes MR, P?rez-Belmonte LM, G?mez-Huelgas R... Tratamiento con urea oral en paciente con insuficiencia cardiaca e hyponatremia cr?nica.. Rev Esp Casos Clin Med Intern (RECCMI)... 2024;9(Supl. 1):8-10",
+      "used_in_analysis": false,
+      "data_level": "case-level"
+    },
+    {
+      "name": "duplicate",
+      "pandas_dtype": "float64",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 850,
+      "missing_percentage": 79.59,
+      "unique_non_missing_count": 1,
+      "example_value": 1.0,
+      "used_in_analysis": false,
+      "data_level": "case-level"
+    },
+    {
+      "name": "reportduplicate_duplicatesource",
+      "pandas_dtype": "object",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 890,
+      "missing_percentage": 83.33,
+      "unique_non_missing_count": 132,
+      "example_value": "RDY",
+      "used_in_analysis": false,
+      "data_level": "case-level"
+    },
+    {
+      "name": "reportduplicate_duplicatenumb",
+      "pandas_dtype": "object",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 850,
+      "missing_percentage": 79.59,
+      "unique_non_missing_count": 214,
+      "example_value": "DE-RDY-DEU/2025/02/002080",
+      "used_in_analysis": false,
+      "data_level": "case-level"
+    },
+    {
+      "name": "patient_drug_drugrecurreadministration",
+      "pandas_dtype": "str",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 971,
+      "missing_percentage": 90.92,
+      "unique_non_missing_count": 14,
+      "example_value": "yes_unknown,yes_unknown",
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_drug_drugbatchnumb",
+      "pandas_dtype": "object",
+      "meaning": "Not established by the supplied documentation; retained as a source field (see field name and example value).",
+      "missing_count": 1021,
+      "missing_percentage": 95.6,
+      "unique_non_missing_count": 32,
+      "example_value": "UNK",
+      "used_in_analysis": false,
+      "data_level": "drug-level / delimited multi-value field"
+    },
+    {
+      "name": "patient_patientagegroup",
+      "pandas_dtype": "str",
+      "meaning": "Coarse patient age-group field supplied in the extract.",
+      "missing_count": 1037,
+      "missing_percentage": 97.1,
+      "unique_non_missing_count": 3,
+      "example_value": "elderly",
+      "used_in_analysis": true,
+      "data_level": "case-level"
+    },
+    {
+      "name": "authoritynumb",
+      "pandas_dtype": "str",
+      "meaning": "Authority number as supplied in the source extract.",
+      "missing_count": 1067,
+      "missing_percentage": 99.91,
+      "unique_non_missing_count": 1,
+      "example_value": "GB-MHRA-MIDB-3eade4aa-0be1-440f-9a24-47ba272e181a",
+      "used_in_analysis": false,
+      "data_level": "case-level"
+    }
+  ],
+  "date_fields": {
+    "transmissiondateformat": {
+      "non_missing_count": 1068,
+      "example_values": [
+        "102"
+      ]
+    },
+    "transmissiondate": {
+      "non_missing_count": 1068,
+      "example_values": [
+        "20250115",
+        "20250114",
+        "20250408",
+        "20250409",
+        "20250716"
+      ]
+    },
+    "receivedateformat": {
+      "non_missing_count": 1068,
+      "example_values": [
+        "102"
+      ]
+    },
+    "receivedate": {
+      "non_missing_count": 1068,
+      "example_values": [
+        "20241227",
+        "20241228",
+        "20241230",
+        "20241231",
+        "20250301"
+      ]
+    },
+    "receiptdateformat": {
+      "non_missing_count": 1068,
+      "example_values": [
+        "102"
+      ]
+    },
+    "receiptdate": {
+      "non_missing_count": 1068,
+      "example_values": [
+        "20241227",
+        "20241228",
+        "20241230",
+        "20241231",
+        "20250301"
+      ]
+    },
+    "report_date": {
+      "non_missing_count": 1068,
+      "example_values": [
+        "2024-12-27",
+        "2024-12-28",
+        "2024-12-30",
+        "2024-12-31",
+        "2025-03-01"
+      ]
+    },
+    "patient_drug_drugstartdateformat": {
+      "non_missing_count": 651,
+      "example_values": [
+        "102102102102",
+        "102,102,102,102,102,102,102,102,102,102",
+        "102102",
+        "602",
+        "102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102,102"
+      ]
+    },
+    "patient_drug_drugstartdate": {
+      "non_missing_count": 651,
+      "example_values": [
+        "20240711,20240711,20240711,20240711",
+        "20240910,20240913,20240911,20240912,20240917,20240911,20240915,20240910,20240910,20240914",
+        "20241108,20241108",
+        "20241126,20220315",
+        "20241012,20241122,20240921,20240923,20241008,20241122,20241012,20241107,20241012,20241203"
+      ]
+    },
+    "patient_drug_drugenddateformat": {
+      "non_missing_count": 536,
+      "example_values": [
+        "102102102102",
+        "102,102,102,102,102,102,102,102,102,102,102,102,102",
+        "102",
+        "102102102",
+        "102102102102102"
+      ]
+    },
+    "patient_drug_drugenddate": {
+      "non_missing_count": 536,
+      "example_values": [
+        "20240711,20240711,20240711,20240711",
+        "20240917,20240913,20240917,20240911,20240917,20241023,20240911,20240915,20240917,20240917,20241023,20240913,20240915",
+        "20241207",
+        "20241211",
+        "20240923,20240930,20241008"
+      ]
+    }
+  },
+  "important_categorical_field_distributions": {
+    "serious": [
+      {
+        "value": "serious",
+        "count": 1067
+      },
+      {
+        "value": "not serious",
+        "count": 1
+      }
+    ],
+    "fulfillexpeditecriteria": [
+      {
+        "value": "yes",
+        "count": 1067
+      },
+      {
+        "value": "no",
+        "count": 1
+      }
+    ],
+    "patient_patientsex": [
+      {
+        "value": "female",
+        "count": 520
+      },
+      {
+        "value": "male",
+        "count": 518
+      },
+      {
+        "value": null,
+        "count": 30
+      }
+    ],
+    "occurcountry": [
+      {
+        "value": "eu",
+        "count": 353
+      },
+      {
+        "value": "united kingdom",
+        "count": 282
+      },
+      {
+        "value": "france",
+        "count": 189
+      },
+      {
+        "value": "canada",
+        "count": 57
+      },
+      {
+        "value": "italy",
+        "count": 53
+      },
+      {
+        "value": "germany",
+        "count": 43
+      },
+      {
+        "value": "spain",
+        "count": 27
+      },
+      {
+        "value": "poland",
+        "count": 21
+      },
+      {
+        "value": "portugal",
+        "count": 10
+      },
+      {
+        "value": null,
+        "count": 7
+      },
+      {
+        "value": "belgium",
+        "count": 4
+      },
+      {
+        "value": "IE",
+        "count": 4
+      },
+      {
+        "value": "united states",
+        "count": 4
+      },
+      {
+        "value": "RO",
+        "count": 2
+      },
+      {
+        "value": "sweden",
+        "count": 2
+      },
+      {
+        "value": "SA",
+        "count": 2
+      },
+      {
+        "value": "HR",
+        "count": 2
+      },
+      {
+        "value": "UA",
+        "count": 2
+      },
+      {
+        "value": "FI",
+        "count": 1
+      },
+      {
+        "value": "australia",
+        "count": 1
+      },
+      {
+        "value": "indonesia",
+        "count": 1
+      },
+      {
+        "value": "china",
+        "count": 1
+      }
+    ],
+    "primarysource_reportercountry": [
+      {
+        "value": "eu",
+        "count": 356
+      },
+      {
+        "value": "united kingdom",
+        "count": 285
+      },
+      {
+        "value": "france",
+        "count": 189
+      },
+      {
+        "value": "canada",
+        "count": 58
+      },
+      {
+        "value": "italy",
+        "count": 53
+      },
+      {
+        "value": "germany",
+        "count": 43
+      },
+      {
+        "value": "spain",
+        "count": 27
+      },
+      {
+        "value": "poland",
+        "count": 21
+      },
+      {
+        "value": "portugal",
+        "count": 10
+      },
+      {
+        "value": "belgium",
+        "count": 4
+      },
+      {
+        "value": "IE",
+        "count": 4
+      },
+      {
+        "value": "united states",
+        "count": 4
+      },
+      {
+        "value": "RO",
+        "count": 2
+      },
+      {
+        "value": "sweden",
+        "count": 2
+      },
+      {
+        "value": "SA",
+        "count": 2
+      },
+      {
+        "value": "HR",
+        "count": 2
+      },
+      {
+        "value": "UA",
+        "count": 2
+      },
+      {
+        "value": "FI",
+        "count": 1
+      },
+      {
+        "value": "australia",
+        "count": 1
+      },
+      {
+        "value": "indonesia",
+        "count": 1
+      },
+      {
+        "value": "china",
+        "count": 1
+      }
+    ],
+    "primarysource_qualification": [
+      {
+        "value": "physician",
+        "count": 518
+      },
+      {
+        "value": "pharmacist",
+        "count": 259
+      },
+      {
+        "value": "other health professional",
+        "count": 171
+      },
+      {
+        "value": "consumer or non-health professional",
+        "count": 120
+      }
+    ],
+    "reporttype": [
+      {
+        "value": "spontaneous report",
+        "count": 1056
+      },
+      {
+        "value": "report from study",
+        "count": 12
+      }
+    ],
+    "patient_patientagegroup": [
+      {
+        "value": null,
+        "count": 1037
+      },
+      {
+        "value": "elderly",
+        "count": 19
+      },
+      {
+        "value": "adult",
+        "count": 9
+      },
+      {
+        "value": "neonate",
+        "count": 3
+      }
+    ],
+    "patient_reaction_reactionoutcome": [
+      {
+        "value": "recovered/resolved",
+        "count": 147
+      },
+      {
+        "value": "recovering/resolving",
+        "count": 82
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved",
+        "count": 76
+      },
+      {
+        "value": "not recovered/not resolved/ongoing",
+        "count": 67
+      },
+      {
+        "value": "unknown",
+        "count": 66
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved",
+        "count": 52
+      },
+      {
+        "value": "unknown,unknown",
+        "count": 35
+      },
+      {
+        "value": "recovering/resolving,recovering/resolving",
+        "count": 29
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved",
+        "count": 29
+      },
+      {
+        "value": "unknown,unknown,unknown",
+        "count": 23
+      },
+      {
+        "value": "fatal",
+        "count": 18
+      },
+      {
+        "value": "fatal,fatal",
+        "count": 18
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing",
+        "count": 15
+      },
+      {
+        "value": "unknown,unknown,unknown,unknown",
+        "count": 14
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved",
+        "count": 10
+      },
+      {
+        "value": "unknown,unknown,unknown,unknown,unknown",
+        "count": 10
+      },
+      {
+        "value": "recovered/resolved,unknown",
+        "count": 9
+      },
+      {
+        "value": "unknown,unknown,unknown,unknown,unknown,unknown",
+        "count": 8
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved",
+        "count": 8
+      },
+      {
+        "value": "recovering/resolving,recovering/resolving,recovering/resolving",
+        "count": 8
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,unknown",
+        "count": 7
+      },
+      {
+        "value": "recovered/resolved with sequelae",
+        "count": 7
+      },
+      {
+        "value": "recovering/resolving,recovered/resolved",
+        "count": 7
+      },
+      {
+        "value": "unknown,recovered/resolved,recovered/resolved",
+        "count": 7
+      },
+      {
+        "value": "recovering/resolving,unknown",
+        "count": 6
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing",
+        "count": 5
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved",
+        "count": 5
+      },
+      {
+        "value": "recovered/resolved,unknown,unknown",
+        "count": 4
+      },
+      {
+        "value": "unknown,recovered/resolved",
+        "count": 4
+      },
+      {
+        "value": "fatal,not recovered/not resolved/ongoing",
+        "count": 4
+      },
+      {
+        "value": "recovering/resolving,recovered/resolved,recovered/resolved",
+        "count": 4
+      },
+      {
+        "value": "unknown,unknown,unknown,unknown,unknown,unknown,unknown",
+        "count": 4
+      },
+      {
+        "value": "recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving",
+        "count": 4
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovering/resolving",
+        "count": 4
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,unknown,unknown",
+        "count": 3
+      },
+      {
+        "value": "fatal,fatal,fatal,fatal",
+        "count": 3
+      },
+      {
+        "value": "recovered/resolved,unknown,unknown,unknown",
+        "count": 3
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved",
+        "count": 3
+      },
+      {
+        "value": "recovering/resolving,recovering/resolving,unknown",
+        "count": 3
+      },
+      {
+        "value": "unknown,unknown,recovering/resolving",
+        "count": 3
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing",
+        "count": 3
+      },
+      {
+        "value": "fatal,fatal,fatal,fatal,fatal",
+        "count": 3
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,unknown",
+        "count": 3
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,recovered/resolved",
+        "count": 3
+      },
+      {
+        "value": "fatal,recovered/resolved",
+        "count": 3
+      },
+      {
+        "value": "unknown,unknown,recovered/resolved",
+        "count": 3
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing",
+        "count": 3
+      },
+      {
+        "value": "recovered/resolved,recovering/resolving",
+        "count": 3
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,recovering/resolving,recovering/resolving",
+        "count": 2
+      },
+      {
+        "value": "fatal,unknown,unknown",
+        "count": 2
+      },
+      {
+        "value": "unknown,unknown,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,unknown,unknown,recovered/resolved",
+        "count": 2
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,unknown,unknown,unknown,unknown,recovering/resolving,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,recovering/resolving,unknown,unknown",
+        "count": 2
+      },
+      {
+        "value": "unknown,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved",
+        "count": 2
+      },
+      {
+        "value": "recovered/resolved,recovering/resolving,recovering/resolving,recovered/resolved",
+        "count": 2
+      },
+      {
+        "value": "recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving",
+        "count": 2
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,recovered/resolved,recovered/resolved",
+        "count": 2
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,unknown",
+        "count": 2
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,unknown,unknown",
+        "count": 2
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,not recovered/not resolved/ongoing,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,unknown",
+        "count": 2
+      },
+      {
+        "value": "unknown,recovering/resolving,recovering/resolving",
+        "count": 2
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing",
+        "count": 2
+      },
+      {
+        "value": "recovering/resolving,recovering/resolving,recovered/resolved,recovering/resolving,unknown",
+        "count": 2
+      },
+      {
+        "value": "fatal,fatal,fatal",
+        "count": 2
+      },
+      {
+        "value": "recovering/resolving,recovering/resolving,recovered/resolved",
+        "count": 2
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,recovered/resolved,recovering/resolving,recovered/resolved",
+        "count": 2
+      },
+      {
+        "value": "recovering/resolving,recovering/resolving,recovered/resolved,recovered/resolved",
+        "count": 2
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,unknown,unknown,unknown,unknown,unknown,unknown,unknown",
+        "count": 2
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,unknown",
+        "count": 2
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved",
+        "count": 2
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,unknown",
+        "count": 2
+      },
+      {
+        "value": "fatal,unknown",
+        "count": 2
+      },
+      {
+        "value": "unknown,unknown,recovered/resolved,recovered/resolved,unknown,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,unknown",
+        "count": 2
+      },
+      {
+        "value": "recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving",
+        "count": 2
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,unknown,unknown,unknown",
+        "count": 2
+      },
+      {
+        "value": "unknown,recovering/resolving",
+        "count": 2
+      },
+      {
+        "value": "unknown,recovered/resolved with sequelae,recovered/resolved with sequelae",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovering/resolving,recovering/resolving,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "unknown,unknown,unknown,recovering/resolving,recovering/resolving,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,recovering/resolving,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovering/resolving,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,recovering/resolving,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,recovering/resolving",
+        "count": 1
+      },
+      {
+        "value": "unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovering/resolving,recovered/resolved,not recovered/not resolved/ongoing,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,not recovered/not resolved/ongoing,recovered/resolved,not recovered/not resolved/ongoing,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving",
+        "count": 1
+      },
+      {
+        "value": "unknown,recovered/resolved,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "fatal,fatal,fatal,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,recovering/resolving",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovering/resolving,recovering/resolving,recovering/resolving,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "fatal,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "unknown,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,unknown,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovering/resolving,recovering/resolving",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,unknown,unknown,recovered/resolved,recovered/resolved,unknown,recovered/resolved,recovered/resolved,recovered/resolved,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved with sequelae,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,recovering/resolving,recovered/resolved with sequelae,recovered/resolved with sequelae,recovered/resolved,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovering/resolving,recovering/resolving",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,unknown,unknown,recovering/resolving",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,unknown,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "unknown,not recovered/not resolved/ongoing,recovered/resolved,unknown,unknown,unknown,unknown,unknown,unknown,recovered/resolved,recovered/resolved,unknown",
+        "count": 1
+      },
+      {
+        "value": "unknown,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,unknown",
+        "count": 1
+      },
+      {
+        "value": "unknown,unknown,recovering/resolving,unknown",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,unknown,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,not recovered/not resolved/ongoing,unknown",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,unknown,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved with sequelae,recovered/resolved,recovered/resolved,recovered/resolved with sequelae,recovered/resolved with sequelae",
+        "count": 1
+      },
+      {
+        "value": "unknown,recovered/resolved,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,unknown,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,unknown,unknown,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "fatal,fatal,fatal,fatal,fatal,fatal,fatal",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,recovered/resolved with sequelae,not recovered/not resolved/ongoing,recovering/resolving",
+        "count": 1
+      },
+      {
+        "value": "unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "unknown,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,unknown,unknown,not recovered/not resolved/ongoing,unknown,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved with sequelae,recovered/resolved with sequelae,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovering/resolving,recovering/resolving,recovering/resolving,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,not recovered/not resolved/ongoing,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,unknown",
+        "count": 1
+      },
+      {
+        "value": "unknown,unknown,unknown,unknown,unknown,not recovered/not resolved/ongoing,unknown,unknown,unknown,unknown,unknown,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "unknown,recovered/resolved,recovered/resolved,unknown,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,recovering/resolving,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,recovering/resolving,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved with sequelae,recovered/resolved,recovered/resolved with sequelae",
+        "count": 1
+      },
+      {
+        "value": "fatal,fatal,fatal,fatal,fatal,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "unknown,unknown,unknown,unknown,recovering/resolving,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovering/resolving,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "unknown,not recovered/not resolved/ongoing,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "unknown,recovered/resolved,not recovered/not resolved/ongoing,unknown,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "fatal,recovering/resolving,not recovered/not resolved/ongoing,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,unknown,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "unknown,not recovered/not resolved/ongoing,unknown,unknown,unknown,unknown,unknown,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "unknown,recovering/resolving,recovering/resolving,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved with sequelae,recovered/resolved with sequelae,recovering/resolving,recovered/resolved with sequelae,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovered/resolved with sequelae,recovered/resolved with sequelae",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,recovering/resolving,unknown",
+        "count": 1
+      },
+      {
+        "value": "unknown,recovered/resolved,recovered/resolved,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,not recovered/not resolved/ongoing,unknown,recovered/resolved,recovered/resolved,recovered/resolved,unknown,unknown,recovered/resolved,recovered/resolved,unknown",
+        "count": 1
+      },
+      {
+        "value": "unknown,recovered/resolved,unknown",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,recovered/resolved with sequelae,recovered/resolved with sequelae",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,unknown,unknown,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved with sequelae,recovered/resolved,recovered/resolved,recovered/resolved,recovering/resolving,not recovered/not resolved/ongoing,recovered/resolved,unknown",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,recovering/resolving,recovering/resolving,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved with sequelae,unknown",
+        "count": 1
+      },
+      {
+        "value": "unknown,unknown,unknown,unknown,unknown,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovering/resolving,recovering/resolving,recovering/resolving,recovered/resolved,recovered/resolved,recovering/resolving",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,unknown,unknown,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "unknown,unknown,unknown,recovering/resolving,unknown",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,unknown,unknown,recovering/resolving,recovered/resolved,recovering/resolving",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,unknown,unknown,unknown,unknown,unknown,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,unknown",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovering/resolving,not recovered/not resolved/ongoing,recovering/resolving,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,not recovered/not resolved/ongoing,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovering/resolving,recovering/resolving,recovering/resolving",
+        "count": 1
+      },
+      {
+        "value": "unknown,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,unknown,not recovered/not resolved/ongoing,unknown",
+        "count": 1
+      },
+      {
+        "value": "fatal,fatal,fatal,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,unknown,recovered/resolved,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved with sequelae,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,unknown,recovered/resolved,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "fatal,not recovered/not resolved/ongoing,unknown,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovering/resolving,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "unknown,recovered/resolved,recovered/resolved,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "unknown,recovering/resolving,recovering/resolving,recovering/resolving",
+        "count": 1
+      },
+      {
+        "value": "fatal,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "unknown,unknown,recovering/resolving,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovered/resolved,recovered/resolved,recovered/resolved,unknown",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,unknown,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,unknown,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "unknown,unknown,unknown,recovered/resolved,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,unknown,recovered/resolved,recovered/resolved,unknown,unknown,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,unknown,recovered/resolved,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovering/resolving,recovering/resolving,recovering/resolving,recovered/resolved,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovering/resolving,recovered/resolved,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved with sequelae,recovered/resolved with sequelae,recovered/resolved with sequelae,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "recovering/resolving,recovered/resolved,recovering/resolving",
+        "count": 1
+      },
+      {
+        "value": "fatal,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,recovered/resolved,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "fatal,recovering/resolving",
+        "count": 1
+      },
+      {
+        "value": "unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "fatal,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,recovered/resolved,recovered/resolved,not recovered/not resolved/ongoing,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovering/resolving,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovering/resolving,unknown,unknown,unknown,unknown,recovering/resolving,recovering/resolving,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "recovering/resolving,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "recovering/resolving,recovered/resolved with sequelae,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,unknown,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,recovering/resolving,recovered/resolved,recovering/resolving,not recovered/not resolved/ongoing,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovering/resolving,recovered/resolved,recovered/resolved,unknown",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "unknown,unknown,not recovered/not resolved/ongoing,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "recovering/resolving,recovering/resolving,recovering/resolving,recovered/resolved,recovering/resolving",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,not recovered/not resolved/ongoing,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,not recovered/not resolved/ongoing,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,not recovered/not resolved/ongoing,recovered/resolved,recovered/resolved,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "recovering/resolving,recovering/resolving,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,not recovered/not resolved/ongoing,unknown,unknown,unknown,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,unknown,not recovered/not resolved/ongoing,unknown,recovered/resolved,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "unknown,recovering/resolving,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "fatal,recovered/resolved,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "unknown,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,unknown,recovering/resolving,unknown,unknown,unknown,unknown,unknown,unknown,unknown,recovering/resolving,recovering/resolving,recovering/resolving,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "fatal,fatal,not recovered/not resolved/ongoing,unknown,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,recovering/resolving,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,unknown,unknown,recovered/resolved,recovered/resolved,unknown,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "unknown,recovered/resolved,unknown,unknown,recovered/resolved,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "unknown,recovering/resolving,recovering/resolving,recovering/resolving,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "unknown,recovering/resolving,recovering/resolving,recovered/resolved,unknown,unknown,recovered/resolved,unknown,recovering/resolving,unknown,unknown,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving,recovering/resolving",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "recovering/resolving,recovered/resolved,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "recovering/resolving,recovering/resolving,recovering/resolving,unknown",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,recovering/resolving,not recovered/not resolved/ongoing,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,unknown,unknown,unknown,unknown,unknown,unknown,recovered/resolved,unknown,unknown,recovered/resolved,recovered/resolved,unknown,recovered/resolved,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,unknown,unknown,recovered/resolved,unknown,unknown,unknown,recovered/resolved,recovered/resolved,recovered/resolved,unknown,unknown,unknown,unknown,recovering/resolving,recovering/resolving,recovering/resolving",
+        "count": 1
+      },
+      {
+        "value": "unknown,unknown,unknown,unknown,unknown,unknown,not recovered/not resolved/ongoing,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,not recovered/not resolved/ongoing,not recovered/not resolved/ongoing,recovered/resolved,recovered/resolved,recovered/resolved",
+        "count": 1
+      },
+      {
+        "value": "fatal,fatal,fatal,fatal,fatal,fatal,fatal,fatal,fatal,fatal,fatal",
+        "count": 1
+      },
+      {
+        "value": "unknown,recovered/resolved,recovered/resolved,unknown,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,unknown,unknown,recovered/resolved,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,unknown,unknown",
+        "count": 1
+      },
+      {
+        "value": "recovering/resolving,recovering/resolving,not recovered/not resolved/ongoing",
+        "count": 1
+      },
+      {
+        "value": "recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,recovered/resolved,unknown,unknown,unknown",
+        "count": 1
+      }
+    ]
+  }
+}

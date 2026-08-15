@@ -1,0 +1,284 @@
+{
+  "row_count": 1068,
+  "unique_case_count": 1024,
+  "duplicate_row_count": 0,
+  "reporting_period": {
+    "start": "2024-12-27",
+    "end": "2025-12-26"
+  },
+  "important_columns": {
+    "fulfillexpeditecriteria": {
+      "present": true,
+      "dtype": "str",
+      "missing_count": 0,
+      "unique_non_missing_count": 2
+    },
+    "occurcountry": {
+      "present": true,
+      "dtype": "str",
+      "missing_count": 7,
+      "unique_non_missing_count": 21
+    },
+    "patient_drug_drugindication": {
+      "present": true,
+      "dtype": "str",
+      "missing_count": 0,
+      "unique_non_missing_count": 793
+    },
+    "patient_drug_medicinalproduct": {
+      "present": true,
+      "dtype": "str",
+      "missing_count": 0,
+      "unique_non_missing_count": 996
+    },
+    "patient_patientagegroup": {
+      "present": true,
+      "dtype": "str",
+      "missing_count": 1037,
+      "unique_non_missing_count": 3
+    },
+    "patient_patientonsetage": {
+      "present": true,
+      "dtype": "float64",
+      "missing_count": 91,
+      "unique_non_missing_count": 87
+    },
+    "patient_patientonsetageunit": {
+      "present": true,
+      "dtype": "object",
+      "missing_count": 81,
+      "unique_non_missing_count": 5
+    },
+    "patient_patientsex": {
+      "present": true,
+      "dtype": "str",
+      "missing_count": 30,
+      "unique_non_missing_count": 2
+    },
+    "patient_reaction_reactionmeddrapt": {
+      "present": true,
+      "dtype": "str",
+      "missing_count": 0,
+      "unique_non_missing_count": 882
+    },
+    "patient_reaction_reactionoutcome": {
+      "present": true,
+      "dtype": "str",
+      "missing_count": 0,
+      "unique_non_missing_count": 251
+    },
+    "primarysource_qualification": {
+      "present": true,
+      "dtype": "str",
+      "missing_count": 0,
+      "unique_non_missing_count": 4
+    },
+    "primarysource_reportercountry": {
+      "present": true,
+      "dtype": "str",
+      "missing_count": 0,
+      "unique_non_missing_count": 21
+    },
+    "receivedate": {
+      "present": true,
+      "dtype": "int64",
+      "missing_count": 0,
+      "unique_non_missing_count": 288
+    },
+    "reporttype": {
+      "present": true,
+      "dtype": "str",
+      "missing_count": 0,
+      "unique_non_missing_count": 2
+    },
+    "safetyreportid": {
+      "present": true,
+      "dtype": "int64",
+      "missing_count": 0,
+      "unique_non_missing_count": 1024
+    },
+    "serious": {
+      "present": true,
+      "dtype": "str",
+      "missing_count": 0,
+      "unique_non_missing_count": 2
+    },
+    "seriousnesscongenitalanomali": {
+      "present": true,
+      "dtype": "str",
+      "missing_count": 0,
+      "unique_non_missing_count": 2
+    },
+    "seriousnessdeath": {
+      "present": true,
+      "dtype": "str",
+      "missing_count": 0,
+      "unique_non_missing_count": 2
+    },
+    "seriousnessdisabling": {
+      "present": true,
+      "dtype": "str",
+      "missing_count": 0,
+      "unique_non_missing_count": 2
+    },
+    "seriousnesshospitalization": {
+      "present": true,
+      "dtype": "str",
+      "missing_count": 0,
+      "unique_non_missing_count": 2
+    },
+    "seriousnesslifethreatening": {
+      "present": true,
+      "dtype": "str",
+      "missing_count": 0,
+      "unique_non_missing_count": 2
+    },
+    "seriousnessother": {
+      "present": true,
+      "dtype": "str",
+      "missing_count": 0,
+      "unique_non_missing_count": 2
+    }
+  },
+  "missing_values": {
+    "safetyreportversion": 0,
+    "safetyreportid": 0,
+    "primarysourcecountry": 0,
+    "occurcountry": 7,
+    "transmissiondateformat": 0,
+    "transmissiondate": 0,
+    "reporttype": 0,
+    "serious": 0,
+    "seriousnessdeath": 0,
+    "seriousnesslifethreatening": 0,
+    "seriousnesshospitalization": 0,
+    "seriousnessdisabling": 0,
+    "seriousnesscongenitalanomali": 0,
+    "seriousnessother": 0,
+    "receivedateformat": 0,
+    "receivedate": 0,
+    "receiptdateformat": 0,
+    "receiptdate": 0,
+    "fulfillexpeditecriteria": 0,
+    "companynumb": 1,
+    "primarysource_reportercountry": 0,
+    "primarysource_qualification": 0,
+    "sender_sendertype": 0,
+    "sender_senderorganization": 0,
+    "receiver_receivertype": 0,
+    "receiver_receiverorganization": 0,
+    "patient_patientonsetage": 91,
+    "patient_patientonsetageunit": 81,
+    "patient_patientsex": 30,
+    "patient_reaction_reactionmeddraversionpt": 0,
+    "patient_reaction_reactionmeddrapt": 0,
+    "patient_reaction_reactionoutcome": 0,
+    "patient_drug_drugcharacterization": 0,
+    "patient_drug_medicinalproduct": 0,
+    "patient_drug_drugauthorizationnumb": 4,
+    "patient_drug_drugstructuredosagenumb": 153,
+    "patient_drug_drugstructuredosageunit": 153,
+    "patient_drug_drugseparatedosagenumb": 290,
+    "patient_drug_drugintervaldosageunitnumb": 330,
+    "patient_drug_drugintervaldosagedefinition": 330,
+    "patient_drug_drugdosagetext": 244,
+    "patient_drug_drugdosageform": 378,
+    "patient_drug_drugadministrationroute": 23,
+    "patient_drug_drugindication": 0,
+    "patient_drug_actiondrug": 0,
+    "patient_drug_drugadditional": 21,
+    "patient_drug_activesubstance_activesubstancename": 0,
+    "patient_summary_narrativeincludeclinical": 355,
+    "drugs": 0,
+    "report_date": 0,
+    "patient_patientweight": 579,
+    "patient_drug_drugstartdateformat": 417,
+    "patient_drug_drugstartdate": 417,
+    "patient_drug_drugenddateformat": 532,
+    "patient_drug_drugenddate": 532,
+    "patient_drug_drugtreatmentduration": 622,
+    "patient_drug_drugtreatmentdurationunit": 622,
+    "patient_drug_drugcumulativedosagenumb": 880,
+    "patient_drug_drugcumulativedosageunit": 880,
+    "primarysource_literaturereference": 911,
+    "duplicate": 850,
+    "reportduplicate_duplicatesource": 890,
+    "reportduplicate_duplicatenumb": 850,
+    "patient_drug_drugrecurreadministration": 971,
+    "patient_drug_drugbatchnumb": 1021,
+    "patient_patientagegroup": 1037,
+    "authoritynumb": 1067
+  },
+  "validation_warnings": [
+    "The supplied dataset is an .xlsx workbook rather than the CSV named in the challenge documentation; the single worksheet was analyzed without modifying it.",
+    "patient_patientonsetageunit contains nonstandard value(s) requiring review: ['800']",
+    "patient_patientagegroup is substantially missing; age analysis should derive buckets from patient_patientonsetage where valid and use the onset-age unit.",
+    "Some reaction cells contain comma-delimited multiple Preferred Terms; row count is not a count of atomic reaction instances.",
+    "No System Organ Class field is present; SOC analysis should not be inferred from Preferred Terms.",
+    "Expectedness cannot be determined because no product label/CCDS is supplied."
+  ],
+  "additional_validation": {
+    "column_count": 67,
+    "source_sheet": "Bisoprolol_icsr_sample_1068rows",
+    "case_ids_with_multiple_rows": 41,
+    "maximum_rows_for_one_case": 3,
+    "row_count_vs_reaction_count": {
+      "source_row_count": 1068,
+      "rows_with_non_missing_reaction_field": 1068,
+      "atomic_preferred_term_instances_after_comma_split": 3648,
+      "definition": "Atomic Preferred Term instances are comma-split from the reaction field; this is distinct from case and source-row counts."
+    },
+    "receivedate": {
+      "non_missing_count": 1068,
+      "malformed_non_missing_values": []
+    },
+    "patient_age": {
+      "numeric_non_missing_count": 977,
+      "numeric_missing_or_non_numeric_count": 91,
+      "minimum_numeric_value": 1.0,
+      "maximum_numeric_value": 104.0,
+      "age_unit_counts_including_missing": {
+        "year": 975,
+        "<missing>": 81,
+        "month": 5,
+        "day": 3,
+        "800": 3,
+        "week": 1
+      },
+      "nonstandard_age_unit_values": [
+        "800"
+      ],
+      "values_outside_0_to_130": 0,
+      "note": "Ages are not normalized across units; month/week/day values must be converted before a year-based age analysis."
+    },
+    "case_level_field_conflicts_across_repeated_case_ids": {
+      "serious": 0,
+      "fulfillexpeditecriteria": 0,
+      "receivedate": 0
+    },
+    "categorical_values": {
+      "serious": [
+        "not serious",
+        "serious"
+      ],
+      "fulfillexpeditecriteria": [
+        "no",
+        "yes"
+      ],
+      "patient_patientsex": [
+        "female",
+        "male"
+      ],
+      "reporttype": [
+        "report from study",
+        "spontaneous report"
+      ],
+      "primarysource_qualification": [
+        "consumer or non-health professional",
+        "other health professional",
+        "pharmacist",
+        "physician"
+      ]
+    }
+  }
+}
