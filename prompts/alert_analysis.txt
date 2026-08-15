@@ -1,0 +1,4 @@
+Draft the Serious Cases / 15-Day Alerts section using only the approved evidence packet below. Describe the supplied expedited-criterion population, seriousness, outcomes, reactions, and countries as supported. Do not determine expectedness.
+
+Approved evidence packet:
+{{evidence_packet}}

@@ -1,0 +1,4 @@
+Draft the Reaction/Adverse Event Analysis using only the approved evidence packet below. Discuss supplied Preferred Term frequencies and serious-reaction frequencies. Do not infer System Organ Class or causal association.
+
+Approved evidence packet:
+{{evidence_packet}}

@@ -1,0 +1,4 @@
+Draft the Trends and Important Observations section using only the approved evidence packet below. State numerical patterns by reporting month. Do not call a pattern a confirmed safety signal or infer a cause.
+
+Approved evidence packet:
+{{evidence_packet}}

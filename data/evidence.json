@@ -5235,6 +5235,106 @@
       "limitations": []
     },
     {
+      "evidence_id": "EV-ALERT-007",
+      "metric": "top_alert_reactions",
+      "value": [
+        {
+          "reaction": "Acute kidney injury",
+          "count": 81
+        },
+        {
+          "reaction": "Drug ineffective",
+          "count": 59
+        },
+        {
+          "reaction": "Hypotension",
+          "count": 48
+        },
+        {
+          "reaction": "Drug interaction",
+          "count": 45
+        },
+        {
+          "reaction": "Dizziness",
+          "count": 40
+        },
+        {
+          "reaction": "Bradycardia",
+          "count": 39
+        },
+        {
+          "reaction": "Dyspnoea",
+          "count": 39
+        },
+        {
+          "reaction": "Fatigue",
+          "count": 35
+        },
+        {
+          "reaction": "Off label use",
+          "count": 34
+        },
+        {
+          "reaction": "Diarrhoea",
+          "count": 33
+        },
+        {
+          "reaction": "Fall",
+          "count": 32
+        },
+        {
+          "reaction": "Condition aggravated",
+          "count": 30
+        },
+        {
+          "reaction": "Asthenia",
+          "count": 28
+        },
+        {
+          "reaction": "Medication error",
+          "count": 27
+        },
+        {
+          "reaction": "Hypokalaemia",
+          "count": 27
+        },
+        {
+          "reaction": "Hyponatraemia",
+          "count": 25
+        },
+        {
+          "reaction": "Confusional state",
+          "count": 24
+        },
+        {
+          "reaction": "Arthralgia",
+          "count": 24
+        },
+        {
+          "reaction": "Syncope",
+          "count": 23
+        },
+        {
+          "reaction": "Toxicity to various agents",
+          "count": 23
+        }
+      ],
+      "unit": "reaction_instances",
+      "analysis_name": "expedited_alert_top_reactions",
+      "source_fields": [
+        "normalized_expedited",
+        "patient_reaction_reactionmeddrapt"
+      ],
+      "calculation": "alert reaction distribution sorted descending; first 20",
+      "filters": [
+        "normalized_expedited == 'yes'"
+      ],
+      "case_level_or_reaction_level": "reaction",
+      "limitations": [
+        "Reaction instances are not deduplicated; this is a top-frequency subset of the full deterministic alert reaction distribution."
+      ]
+    },
+    {
       "evidence_id": "EV-TREND-001",
       "metric": "cases_by_month",
       "value": [

@@ -92,6 +92,7 @@ def build_evidence(analysis: dict[str, Any]) -> dict[str, Any]:
         _metric_item("EV-ALERT-004", "alert_reaction_distribution", "expedited_alert_reaction_distribution", alerts["reaction_distribution"], filters=["normalized_expedited == 'yes'"], limitations=["Reaction instances are not deduplicated."]),
         _metric_item("EV-ALERT-005", "alert_outcome_distribution", "expedited_alert_outcome_distribution", alerts["outcome_distribution"], filters=["normalized_expedited == 'yes'"]),
         _metric_item("EV-ALERT-006", "alert_country_distribution", "expedited_alert_country_distribution", alerts["country_distribution"], filters=["normalized_expedited == 'yes'"]),
+        _metric_item("EV-ALERT-007", "top_alert_reactions", "expedited_alert_top_reactions", alerts["top_reactions"], filters=["normalized_expedited == 'yes'"], limitations=["Reaction instances are not deduplicated; this is a top-frequency subset of the full deterministic alert reaction distribution."]),
     ])
     trends = analysis["trends"]
     trend_limit = ["Observed numerical patterns only; not a safety-signal determination."]

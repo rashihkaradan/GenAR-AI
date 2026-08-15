@@ -1,0 +1,4 @@
+Draft the Narrative Summary and Analysis using only the approved evidence packet below. Describe the reporting interval, case volume, seriousness, major reported reactions, outcomes, and alert-case context when supported. Do not add a safety conclusion.
+
+Approved evidence packet:
+{{evidence_packet}}

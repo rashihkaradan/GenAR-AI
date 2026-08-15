@@ -1,0 +1,4 @@
+Draft the Summary Analysis of Cases using only the approved evidence packet below. Present case counts, seriousness, and demographic distributions as observations. Explicitly retain relevant limitations when describing incomplete demographic fields.
+
+Approved evidence packet:
+{{evidence_packet}}
