@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "finalization_status": "eligible_for_human_review",
+  "numeric_claims_checked": 288,
+  "numeric_claims_failed": 0,
+  "evidence_references_checked": 29,
+  "missing_evidence": [],
+  "errors": [],
+  "warnings": []
+}

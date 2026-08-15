@@ -7,7 +7,9 @@ from dataclasses import dataclass
 
 DATE_PATTERN = re.compile(r"\b\d{4}-\d{2}-\d{2}\b")
 MONTH_PATTERN = re.compile(r"\b\d{4}-\d{2}\b")
-NUMBER_PATTERN = re.compile(r"(?<![A-Za-z])\b\d{1,3}(?:,\d{3})*(?:\.\d+)?%?|\b\d+(?:\.\d+)?%?")
+# Match plain integers / decimals first (greedy), then comma-formatted numbers.
+# Word boundary on both ends prevents matching "102" inside "1024".
+NUMBER_PATTERN = re.compile(r"\b\d+(?:\.\d+)?%?\b|\b\d{1,3}(?:,\d{3})+(?:\.\d+)?%?\b")
 
 
 @dataclass(frozen=True)
