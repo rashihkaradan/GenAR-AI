@@ -108,7 +108,7 @@ def main() -> None:
         output_path=args.out,
     )
     print(
-        f"✓ FINAL report written to {args.out}\n"
+        f"OK  FINAL report written to {args.out}\n"
         f"  Sections:    {len(report['sections'])}\n"
         f"  Reviewer:    {report['human_review']['reviewer']}\n"
         f"  Approved at: {report['human_review']['timestamp']}\n"

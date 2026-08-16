@@ -10796,5 +10796,17 @@
       "model_name": "deterministic-evidence-template-fallback",
       "prompt_version": "1.0.0"
     }
-  ]
+  ],
+  "finalization_status": "final",
+  "finalization_timestamp": "2026-08-16T16:58:54.837713+00:00",
+  "human_review": {
+    "review_status": "approved",
+    "reviewer": "GenAR Evaluator",
+    "timestamp": "2026-08-16T16:58:39.991256+00:00",
+    "comments": "All sections reviewed and validated. Analysis values confirmed against source data. Approved for finalization.",
+    "approved_sections": [],
+    "flagged_sections": [],
+    "report_id": "357b9072-deef-4f76-8378-1fc1b7bdbb97",
+    "validation_status": "PASS"
+  }
 }
